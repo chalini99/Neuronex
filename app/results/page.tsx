@@ -5,7 +5,8 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import { jsPDF } from "jspdf";
 import autoTable from "jspdf-autotable";
-import * as XLSX from "xlsx/xlsx.mjs";
+import * as XLSX from "xlsx";
+
 
 const tabs = ["Summary", "Charts", "Clinical Trials", "Patents"] as const;
 type Tab = (typeof tabs)[number];
