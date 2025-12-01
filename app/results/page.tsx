@@ -16,7 +16,6 @@ export default function ResultsPage() {
 
   const generatePDF = () => {
     const doc = new jsPDF();
-
     doc.setFontSize(18);
     doc.text("PharmaGen AI - Insight Report", 14, 20);
 
@@ -51,15 +50,24 @@ export default function ResultsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-50 p-8 flex flex-col items-center">
-      <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="max-w-5xl w-full mb-8">
+    <main className="min-h-screen bg-slate-950 text-slate-50 px-10 py-10 flex flex-col items-start">
+
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="w-full mb-8"
+      >
         <h1 className="text-4xl md:text-5xl font-bold mb-2">Insights for Your Query</h1>
         <p className="text-slate-300 italic">
           “Which respiratory diseases show low competition but high unmet patient need in India?”
         </p>
       </motion.div>
 
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="max-w-5xl w-full rounded-3xl bg-slate-900/70 border border-slate-700 p-6 shadow-xl backdrop-blur">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="w-full rounded-3xl bg-slate-900/70 border border-slate-700 p-10 shadow-xl backdrop-blur"
+      >
         <div className="flex gap-3 mb-6">
           {tabs.map((tab) => (
             <button
@@ -83,25 +91,37 @@ export default function ResultsPage() {
           {activeTab === "Patents" && <PatentsSection />}
         </div>
 
-        <div className="mt-8 flex justify-between items-center">
+        <div className="mt-10 flex justify-between items-center w-full">
           <p className="text-xs text-slate-400">
             Auto-generated draft. Please validate with medical & regulatory experts.
           </p>
 
           <div className="flex gap-3">
-            <button onClick={() => router.push("/dashboard")} className="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 text-sm">
+            <button
+              onClick={() => router.push("/dashboard")}
+              className="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 text-sm"
+            >
               Back to Dashboard
             </button>
 
-            <button onClick={() => router.push("/dashboard")} className="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 text-sm">
+            <button
+              onClick={() => router.push("/dashboard")}
+              className="px-4 py-2 rounded-full bg-slate-800 hover:bg-slate-700 text-sm"
+            >
               Run New Query
             </button>
 
-            <button onClick={generatePDF} className="px-4 py-2 rounded-full bg-emerald-500 text-slate-900 font-bold hover:bg-emerald-400">
+            <button
+              onClick={generatePDF}
+              className="px-4 py-2 rounded-full bg-emerald-500 text-slate-900 font-bold hover:bg-emerald-400"
+            >
               Download PDF
             </button>
 
-            <button onClick={exportExcel} className="px-4 py-2 rounded-full bg-cyan-500 text-slate-900 font-bold hover:bg-cyan-400">
+            <button
+              onClick={exportExcel}
+              className="px-4 py-2 rounded-full bg-cyan-500 text-slate-900 font-bold hover:bg-cyan-400"
+            >
               Export Excel
             </button>
           </div>
@@ -111,7 +131,7 @@ export default function ResultsPage() {
   );
 }
 
-/* ------------------- TAB CONTENT SECTIONS ------------------ */
+/* ------------------- TAB SECTIONS ------------------ */
 
 function SummarySection() {
   return (
@@ -139,7 +159,6 @@ function SummarySection() {
   );
 }
 
-
 function ChartsSection() {
   return (
     <div className="space-y-6">
@@ -157,7 +176,10 @@ function ChartsSection() {
               <span>{row.value}/100</span>
             </div>
             <div className="w-full h-3 rounded-full bg-slate-800">
-              <div className="h-full bg-gradient-to-r from-cyan-500 to-purple-500" style={{ width: `${row.value}%` }} />
+              <div
+                className="h-full bg-gradient-to-r from-cyan-500 to-purple-500"
+                style={{ width: `${row.value}%` }}
+              />
             </div>
           </div>
         ))}

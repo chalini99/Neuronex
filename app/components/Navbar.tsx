@@ -19,8 +19,9 @@ export default function Navbar() {
         <a href="#" className="hover:text-cyan-300 transition">Contact</a>
       </div>
 
-      <button className="px-5 py-2 bg-white bg-opacity-20 rounded-full backdrop-blur-lg hover:bg-opacity-30 transition">
-        Login
+      <button className="mt-10 px-6 py-3 bg-white text-black rounded-full hover:bg-opacity-80 transition z-10">
+        
+        Login 
       </button>
     </motion.nav>
   );
