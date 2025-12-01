@@ -1,6 +1,6 @@
 "use client";
 import { useCallback } from "react";
-import { Particles } from "@tsparticles/react";
+import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
@@ -15,7 +15,7 @@ export default function Hero() {
     <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-700 via-indigo-700 to-blue-700 text-white overflow-hidden">
       <Particles
         id="tsparticles"
-        init={particlesInit}
+        particlesInit={particlesInit}
         options={{
           particles: {
             number: { value: 60 },
