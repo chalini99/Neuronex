@@ -32,10 +32,9 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="text-5xl font-bold text-center z-8"
+        className="text-5xl font-bold text-center z-10"
       >
-        NEURONEX- Transforming pharmaceutical research with insights 
-        generated in hours..not months.
+        Transforming Pharmaceutical Research
       </motion.h1>
 
       <button
